@@ -9,8 +9,6 @@ namespace Pro
 {
     internal class Detenetria:Places
     {
-        Yesno yesno = new Yesno();
-        Write wr = new Write();
         public Detenetria()
         {
             tale1();
@@ -38,7 +36,7 @@ namespace Pro
 
             while (repeat)
             {
-                q1 = Console.ReadLine();
+                q1 = wr.read();
                 if (q1 == "1")
                 {
                     repeat = false;
@@ -61,7 +59,7 @@ namespace Pro
 
                     while (repeat2)
                     {
-                        q2 = Console.ReadLine();
+                        q2 = wr.read();
                         if (q1 == "1")
                         {
                             wr.n();
@@ -141,7 +139,7 @@ namespace Pro
 
             while (repeat)
             {
-                q1 = Console.ReadLine();
+                q1 = wr.read();
                 if (q1 == "1") { repeat = false; wr.n(); wr.print("Okay, lets wait a bit more then."); tale21(); }
                 else if (q1 == "2") { repeat = false; wr.print("Yeah, its getting annoying. Lets go"); tale22(); }
                 else { wr.print("bug in -file Detenetria -line 140"); }
@@ -151,6 +149,9 @@ namespace Pro
 
         void tale21()
         {
+            string q1;
+            bool repeat = true;
+            
             wr.n();
             wr.print("...");
             wr.print("...");
@@ -159,7 +160,7 @@ namespace Pro
             wr.print("Oh finally someone is coming");
 
             wr.n();
-            wr.print("-Someone opens the door");
+            wr.print("-Someone opens the door-");
             
             wr.s("Oh my, sorry if i make you wait");
             wr.s("There were things i had to take care of");
@@ -174,14 +175,136 @@ namespace Pro
             wr.s("It is stolen from my basement");
 
             wr.n();
-            wr.g("What does that object look like");
+            wr.g("And what does that object look like");
 
             wr.n();
-            wr.s("Oh, please come downstairs");
-            wr.s("I have a pitcure of it");
+            wr.s("I can show a copy of it if you will");
+            wr.s("Please come downstairs");
+
+            wr.n();
+            wr.g("What, no! Bring it here");
+
+            wr.n();
+            wr.s("Did I say something wrong");
+
+            wr.n();
+            Console.WriteLine("1 - Let's take a look");
+            Console.WriteLine("2 - Why don't we just get the intel and then go");
+
+            while (repeat)
+            {
+                q1 = wr.read();
+                if (q1 == "1") { repeat = false; tale3(); }
+                else if (q1 == "2") { repeat = false; tale211(); }
+                else { Console.WriteLine("Excuse me?"); }
+
+            }
 
         }
+
+        void tale211()
+        {
+            wr.n();
+            wr.s("Look, this is no joke");
+            wr.s("I will treat you well if you bring me what i want");
+            wr.s("As you can understand this thing worths more than you can imagine");
+            wr.s("I want to show it to you so you will have the best intel you can get");
+            wr.s("Everything's okay now?");
+
+            yesno.start();
+            if (yesnoOut) { tale3(); }
+            else if (!yesnoOut) { }
+            else { Console.WriteLine("bug in Detenetria at line 219"); }
+        }
         
+        void tale3()
+        {
+            bool repeat = true;
+            string q1;
+            
+            wr.n();
+            wr.s("Good, now follow me to the downstairs");
+            wr.s("I'm headin up first");
+
+            wr.n();
+            wr.print("...");
+            wr.print("- You take the stairs and go downstairs -");
+            wr.print("...");
+
+            wr.n();
+            wr.g("- Cough cough -");
+            wr.g("What is wrong with that place");
+            wr.g("And why is it so dark in here");
+
+            wr.n();
+            wr.s("Come here");
+
+            wr.n();
+            wr.g("Where is here you ...");
+            wr.g("This way i assume");
+            wr.g("Let's go");
+
+            wr.n();
+            wr.print("...");
+            wr.print("...");
+
+            wr.n();
+            wr.g("Dude lets go back");
+
+            wr.n();
+            Console.WriteLine("1 - Why is it?");
+            Console.WriteLine("2 - How is this place so big");
+
+
+            while (repeat)
+            {
+                q1 = wr.read();
+                if (q1 == "1") { repeat = false; wr.g("We are walking like 5 minutes straight. This guy is onto something, lets just go back"); tale4(); }
+                else if (q1 == "2") { repeat = false; wr.g("Yeah, that is what i was thinking. This is wrong, we should go back"); tale4(); }
+                else { }
+            }
+
+        }
+
+        void tale4()
+        {
+            wr.n();
+            wr.print("- You guys decided to go back -");
+            wr.print("- And than you figured something out -");
+
+            wr.n();
+            wr.g("Umm...");
+            wr.g("This is the place but");
+            wr.g("Am i dumb, do you see the stairs");
+            wr.g("Actually at first i thought that man was trying to kidnap us or something but");
+            wr.g("i dont think he has powers to make a part of a structure vanish");
+
+            wr.n();
+            wr.print("...");
+
+            wr.n();
+            wr.u("Our guest are being a little bit loud arent they?");
+
+            wr.n();
+            wr.g("And there it goes");
+
+            wr.n();
+            wr.u("I have prepared a well made male to celebrate your appearance");
+            wr.u("Would you like to join me?");
+
+            wr.n();
+            wr.g("Fuck no!");
+
+            wr.n();
+            wr.u("No Mr. Guide, you would..");
+
+            wr.n();
+            wr.print("- An enemy is encountered -");
+            
+            combat.start("Vinil");
+
+        }
+
         void tale22()
         {
             wr.n();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pro
 {
-    internal class Yesno: Game
+    public class Yesno: Game
     {
         public Yesno() 
         {
@@ -24,7 +24,7 @@ namespace Pro
             string q1;
 
 
-            q1 = Console.ReadLine();
+            q1 = wr.read();
             q1 = q1.ToLower();
             if (q1 == "yes" ^ q1 == "y")
             {

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace Pro
 {
-    internal class MapManager:Game
+    public class Enemy:Game
     {
-        public MapManager()
+        Enemies enemies = new Enemies();
+        public Enemy(Enemies Enemies)
         {
+            enemies = Enemies;
+            enemies.Attack();
         }
     }
 }

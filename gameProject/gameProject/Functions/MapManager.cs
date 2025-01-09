@@ -7,31 +7,30 @@ using System.Threading.Tasks;
 
 namespace Pro
 {
-    internal class MapGatherer: Game
+    internal class MapManager: Game
     {
-        Places places = new Places();
-        Random rng = new Random();
+        private Places places = new Places();
         string getLand;
         string selectedMap;
         int hasMap = 8;      // remaining map
         int maxMap;          // max amount of map that a stage can get
 
-        string[] hasShop = { "Renetria", "Suloqinetria", "Detenetria" };
-        string[] hasCamp = { "Xhanlir", "Vetria" };
-        string[] hasTreasure = { "Vezbeflin", "Trabraquel" };
+        string[] hasShop = { "renetria", "suloqinetria", "detenetria" };
+        string[] hasCamp = { "xhanlir", "vetria" };
+        string[] hasTreasure = { "vezbeflin", "trabraquel" };
 
         List<string> allLands = new List<string>();
         List<string> oldLands = new List<string>();
-        public MapGatherer()
+        public MapManager()
         {
-            allLands.Add("Renetria");
-            allLands.Add("Vetria");
-            allLands.Add("Suloqinetria");
-            allLands.Add("Detenetria");
-            allLands.Add("Kernil");
-            allLands.Add("Xhanlir");
-            allLands.Add("Vezbeflin");
-            allLands.Add("Trabraquel");
+            allLands.Add("renetria");
+            allLands.Add("vetria");
+            allLands.Add("suloqinetria");
+            allLands.Add("detenetria");
+            allLands.Add("kernil");
+            allLands.Add("xhanlir");
+            allLands.Add("vezbeflin");
+            allLands.Add("trabraquel");
         }
 
         public void getRandomLand()
@@ -59,7 +58,7 @@ namespace Pro
 
         public void selectLand()
         {
-            selectedMap = Console.ReadLine();
+            selectedMap = wr.read();
 
             if (oldLands.Contains(selectedMap))
             {
@@ -97,28 +96,28 @@ namespace Pro
             Console.WriteLine(selectedMap);
             switch (selectedMap)
             {
-                case "Vetria":
+                case "vetria":
                     Map map1 = new Map(new Vetria());
                     break;
-                case "Detenetria":
+                case "detenetria":
                     Map map2 = new Map(new Detenetria());
                     break;
-                case "Soluqinetria":
+                case "soluqinetria":
                     Map map3 = new Map(new Suloqinetria());
                     break;
-                case "Renetria":
+                case "renetria":
                     Map map4 = new Map(new Renetria());
                     break;
-                case "Xhanlir":
+                case "xhanlir":
                     Map map5 = new Map(new Xhanlir());
                     break;
-                case "Kernil":
+                case "kernil":
                     Map map6 = new Map(new Kernil());
                     break;
-                case "Vezbeflin":
+                case "vezbeflin":
                     Map map7 = new Map(new Vezbeflin());
                     break;
-                case "Trabraquel":
+                case "trabraquel":
                     Map map8 = new Map(new Trabraquel());
                     break;
             }

@@ -1,12 +1,8 @@
-﻿using System.Runtime.ConstrainedExecution;
-
-namespace Pro
+﻿namespace Pro
 {
     public class CharacterCreation : Game
     {
         Classes classes = new Classes();
-        Yesno yesno = new Yesno();
-        SaveGame saveGame = new SaveGame();
         Write wr = new Write();
 
         bool regret = false;
@@ -14,7 +10,7 @@ namespace Pro
 
         public CharacterCreation()
         {
-            Spl = BaseTextSpeed / 10;
+
         }
 
         // text boxes are in the -start and -createClass
@@ -32,7 +28,6 @@ namespace Pro
             wr.print("But");
             wr.print("Since we will be sharing our some time together");
             wr.print("I thing addressing to you with your name would be better");
-            wr.print("So could you please share your precious name with me?");
             getName();
 
             wr.print($"Okay then lets get to work {Name}");
@@ -48,7 +43,7 @@ namespace Pro
             wr.print("You will be using it after all");
             wr.print("So do you want to [create new] or [use preset]"); 
             create();
-            saveGame.save();
+            save.save();
             classes.start();
         }
         #endregion
@@ -56,13 +51,14 @@ namespace Pro
         #region getName
         public void getName()
         {
+            wr.print("So could you please share your precious name with me?");
             string q1;
             string q2;
-            Name = Console.ReadLine();
+            Name = wr.read();
             if (Name == null ^ Name == "")
             {
                 wr.print("Are you afraid of share your name with me?");
-                q1 = Console.ReadLine();
+                q1 = wr.read();
                 if (q1 == "yes" ^ q1 == "Yes" ^ q1 == "y" ^ q1 == "Y")
                 {
                     wr.print("Actually i can't blame you");
@@ -94,7 +90,7 @@ namespace Pro
             {
                 wr.print("");
                 wr.print($"So your name is {Name}, right?");
-                q2 = Console.ReadLine();
+                q2 = wr.read();
                 if (q2 == "yes" ^ q2 == "Yes" ^ q2 == "y" ^ q2 == "Y")
                 {
                     return;
@@ -118,7 +114,7 @@ namespace Pro
         public void create()
         {
             string q1;
-            q1 = Console.ReadLine().ToLower();
+            q1 = wr.read();
             if (q1 == null ^ q1 == "")
             {
                 wr.print(notAnswer[rng.Next(0, 5)]);
@@ -158,7 +154,7 @@ namespace Pro
             string q1;
 
 
-            q1 = Console.ReadLine();
+            q1 = wr.read();
             if (q1 == null ^ q1 == "")
             {
                 wr.print(notAnswer[rng.Next(0, 5)]);
@@ -242,7 +238,7 @@ namespace Pro
             wr.print($"You were born in {birthplace} as a child of ...");
             wr.print("1 - [Retired Knight]\n2 - [Blacksmith]\n3 - [Gatherer]\n4 - [Farmer]\n5 - [Librarian]");
             wr.n();
-            q1 = Console.ReadLine().ToLower();
+            q1 = wr.read();
 
             if (q1 == "retired knight" ^ q1 == "1") { Ap += 3; Dp -= 1; ASpeed -= 0.1f; Hp -= 10; }
             else if (q1 == "blacksmith" ^ q1 == "2") { Ap += 2; Dp += 2; ASpeed += 0.05f; Sp -= 1; }
@@ -265,7 +261,7 @@ namespace Pro
             wr.print("3 - [Watching residents cooking at the square and copying them]");
             wr.print("4 - [Sneakpeeking inside of the areas that we are not allowed]");
             
-            q1 = Console.ReadLine();
+            q1 = wr.read();
 
             if (q1 == "1") { Hp -= 10; Sp += 1; ASpeed += 0.05f; }
             else if (q1 == "2") { ASpeed += 0.1f; Hp -= 5; }
@@ -304,7 +300,7 @@ namespace Pro
             wr.print("2 - [your grades]");
             wr.print("3 - [that thing happened to your friends because of you]");
 
-            q1 = Console.ReadLine();
+            q1 = wr.read();
 
             if (q1 == "1") { Sp -= 2; Dp += 2; }
             else if (q1 == "2") { Sp -= 1; Hp += 10; }
@@ -330,7 +326,7 @@ namespace Pro
 
             while (repeat)
             {
-                q1 = Console.ReadLine().ToLower();
+                q1 = wr.read();
 
                 if (q1 == "1" ^ q1 == "warrior") { repeat = false; Ap += 3; Dp += 2; Hp += 20; }
                 else if (q1 == "2" ^ q1 == "alchemist") { repeat = false; Sp += 4; Hp += 10; }
@@ -380,7 +376,7 @@ namespace Pro
             wr.print("4 - I was advancing my academic career further.");
             while (repeat1)
             {
-                q2 = Console.ReadLine();
+                q2 = wr.read();
                 if (q2 == "1") { wr.print("You are a dependent guy"); Dp += 4; repeat1 = false; }
                 else if (q2 == "2") { wr.print("..."); wr.print("You making it sound like nothing happened."); Hp -= 20; Sp += 1; Ap += 1; repeat1 = false; }
                 else if (q2 == "3") { wr.print("Omg its so good. I always wanted to do something like that"); Hp += 20; Ap += 2; repeat1 = false; }
@@ -413,7 +409,7 @@ namespace Pro
 
             while (repeat)
             {
-                q1 = Console.ReadLine();
+                q1 = wr.read();
 
                 if (q1 == "1") { repeat = false; ASpeed += 0.1f; Hp -= 10; Dp -= 4; tale61(); }
                 else if (q1 == "2") { repeat = false; Sp += 1; Hp -= 5; tale62(); }
@@ -534,7 +530,7 @@ namespace Pro
 
                 while (repeat)
                 {
-                    q1 = Console.ReadLine();
+                    q1 = wr.read();
                     if (q1 == "1") { repeat = false; tale615(); Ap += 1; Sp += 1; }
                     else if (q1 == "2") { repeat = false; wr.print("Okay."); Dp += 1; Hp += 10; }
                     else { wr.print("Come again"); }
@@ -564,7 +560,7 @@ namespace Pro
 
             while (repeat)
             {
-                q1 = Console.ReadLine();
+                q1 = wr.read();
                 if (q1 == "1") { repeat = false; tale615(); }
                 else if (q1 == "2") { wr.print("Then i wont give your thing. Good luck with that"); Dp -= 1; Hp -= 10; ASpeed -= 0.1f; }
                 else if (q1 == "3") { wr.print("Not this time bro. Just spit it out."); Ap -= 1; Sp -= 1; ASpeed -= 0.1f; }
@@ -594,7 +590,7 @@ namespace Pro
 
             while (repeat)
             {
-                q1 = Console.ReadLine();
+                q1 = wr.read();
                 if (q1 == "1") { repeat = false; wr.print($"I am not believing even a bit but okay. This is none of my business after all. right {Name}?"); ASpeed -= 0.1f; }
                 else if (q1 == "2")
                 {
@@ -689,7 +685,7 @@ namespace Pro
 
             while (repeat)
             {
-                q1 = Console.ReadLine();
+                q1 = wr.read();
                 if (q1 == "1") { repeat = false; tale81(); }
                 else if (q1 == "2") { repeat = false; tale82(); }
                 else if (q1 == "3") { repeat = false; tale83(); }

@@ -8,13 +8,16 @@ namespace Pro
     {
         static void Main(string[] args)
         {
+            Adjuster adjuster = new Adjuster();
+            adjuster.start();
+            
             MainMenu main = new MainMenu();
             main.start();
             
             CharacterCreation chcreate = new CharacterCreation();
             chcreate.start();
 
-            MapGatherer mapGatherer = new MapGatherer();
+            MapManager mapGatherer = new MapManager();
             mapGatherer.getRandomLand();
         }
 

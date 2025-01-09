@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Pro
 {
-    internal class Write:Game
+    public class Write:Game
     {
         int textLenght;
         public Write()
@@ -50,6 +51,47 @@ namespace Pro
             Console.WriteLine("[Unknown] " + text);
             textLenght = text.Length;
             Thread.Sleep(BaseTextSpeed + textLenght * Spl);
+        }
+
+        public string read()
+        {
+            string q1 = "";
+            Read();
+            void Read()
+            {
+                string q2;
+
+                q1 = Console.ReadLine().ToLower();
+
+                if (q1 == "command")
+                {
+                    wr.n();
+                    Console.WriteLine("Available commands:");
+                    Console.WriteLine("Settings");
+                    Console.WriteLine("Save");
+                    Console.WriteLine("Typing anything else will stop the 'command' section");
+                    q2 = Console.ReadLine().ToLower();
+                    switch (q2)
+                    {
+                        case "settings":
+                            menu.textSpeedSettings();
+                            read();
+                            break;
+                        case "save":
+                            save.save();
+                            read();
+                            break;
+                        default:
+                            read();
+                            break;
+                    }
+                }
+                else
+                {
+
+                }
+            }
+            return q1;
         }
 
     }

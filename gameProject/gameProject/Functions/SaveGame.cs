@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Pro
 {
-    class SaveGame: Game
+    public class SaveGame: Game
     {
-        StreamWriter saveWrite = new StreamWriter("saves.txt");
-
+        StreamWriter saveWrite = new StreamWriter("save.txt");
         int rAp;
         int rSp;
         int rDp;
@@ -24,6 +23,7 @@ namespace Pro
 
         public void save()
         {
+            saveWrite.Close();
             saveWrite.WriteLine(Ap);
             saveWrite.WriteLine(Sp);
             saveWrite.WriteLine(Dp);
