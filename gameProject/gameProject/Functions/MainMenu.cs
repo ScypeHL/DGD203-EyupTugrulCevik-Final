@@ -113,7 +113,7 @@ namespace Pro
                 while (repeat1)
                 {
                     q1 = Console.ReadLine().ToLower();
-                    if (q1 != null)
+                    if (q1 != null || q1 != "")
                     {   
                         if (q1 == "" || q1 == null) { q1 = "";  }
                         else if (int.TryParse(q1, out q2)) 

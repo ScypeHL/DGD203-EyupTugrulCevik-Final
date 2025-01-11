@@ -161,7 +161,8 @@ namespace Pro
 
             wr.n();
             wr.print("-Someone opens the door-");
-            
+
+            wr.n();
             wr.s("Oh my, sorry if i make you wait");
             wr.s("There were things i had to take care of");
 
@@ -170,16 +171,16 @@ namespace Pro
             wr.g("Then can we please talk about the job in more detail");
 
             wr.n();
-            wr.s("Oh yes, of course");
-            wr.s("What i demand from you is something that belongs to me");
-            wr.s("It is stolen from my basement");
+            wr.c("Oh yes, of course");
+            wr.c("What i demand from you is something that belongs to me");
+            wr.c("It is stolen from my basement");
 
             wr.n();
             wr.g("And what does that object look like");
 
             wr.n();
-            wr.s("I can show a copy of it if you will");
-            wr.s("Please come downstairs");
+            wr.c("I can show a copy of it if you will");
+            wr.c("Please come downstairs");
 
             wr.n();
             wr.g("What, no! Bring it here");
@@ -205,11 +206,11 @@ namespace Pro
         void tale211()
         {
             wr.n();
-            wr.s("Look, this is no joke");
-            wr.s("I will treat you well if you bring me what i want");
-            wr.s("As you can understand this thing worths more than you can imagine");
-            wr.s("I want to show it to you so you will have the best intel you can get");
-            wr.s("Everything's okay now?");
+            wr.c("Look, this is no joke");
+            wr.c("I will treat you well if you bring me what i want");
+            wr.c("As you can understand this thing worth more than you can imagine");
+            wr.c("I want to show it to you so you will have the best intel you can get");
+            wr.c("Everything's okay now?");
 
             yesno.start();
             if (yesnoOut) { tale3(); }
@@ -223,8 +224,8 @@ namespace Pro
             string q1;
             
             wr.n();
-            wr.s("Good, now follow me to the downstairs");
-            wr.s("I'm headin up first");
+            wr.c("Good, now follow me to the downstairs");
+            wr.c("I'm headin up first");
 
             wr.n();
             wr.print("...");
@@ -240,7 +241,7 @@ namespace Pro
             wr.s("Come here");
 
             wr.n();
-            wr.g("Where is here you ...");
+            wr.g("Where is 'here' you pi...");
             wr.g("This way i assume");
             wr.g("Let's go");
 
@@ -249,7 +250,7 @@ namespace Pro
             wr.print("...");
 
             wr.n();
-            wr.g("Dude lets go back");
+            wr.g("You know what, maybe we should go back");
 
             wr.n();
             Console.WriteLine("1 - Why is it?");
@@ -260,7 +261,7 @@ namespace Pro
             {
                 q1 = wr.read();
                 if (q1 == "1") { repeat = false; wr.g("We are walking like 5 minutes straight. This guy is onto something, lets just go back"); tale4(); }
-                else if (q1 == "2") { repeat = false; wr.g("Yeah, that is what i was thinking. This is wrong, we should go back"); tale4(); }
+                else if (q1 == "2") { repeat = false; wr.g("Yeah, that is what i was thinking. There is something wrong, we should go back"); tale4(); }
                 else { }
             }
 
@@ -274,35 +275,94 @@ namespace Pro
 
             wr.n();
             wr.g("Umm...");
-            wr.g("This is the place but");
+            wr.g("Yeah we stepped down from here");
+            wr.g("I remember that desk");
+            wr.g("...");
             wr.g("Am i dumb, do you see the stairs");
             wr.g("Actually at first i thought that man was trying to kidnap us or something but");
             wr.g("i dont think he has powers to make a part of a structure vanish");
 
             wr.n();
             wr.print("...");
+            wr.print("- An obnoxious smell scent fills the room -");
+            wr.print("- Something appears in the dark -");
 
             wr.n();
+            wr.u("Well well well");
             wr.u("Our guest are being a little bit loud arent they?");
 
             wr.n();
             wr.g("And there it goes");
 
             wr.n();
-            wr.u("I have prepared a well made male to celebrate your appearance");
+            wr.u("I have prepared a well made meal to celebrate your appearance");
             wr.u("Would you like to join me?");
 
             wr.n();
             wr.g("Fuck no!");
 
             wr.n();
-            wr.u("No Mr. Guide, you would..");
+            wr.en("No Mr. Guide, you would..");
 
             wr.n();
             wr.print("- An enemy is encountered -");
             
             combat.start("Vinil");
+            
+            tale41();
 
+        }
+        void tale41()
+        {
+            string q1 = "";
+            
+            wr.n();
+            wr.en("It is- impossible... you-");
+
+            wr.n();
+            wr.g("Yeah, thats what they all say");
+            wr.g("I am this and you mere people could not beat me and blah blah");
+            wr.g("Let's see what you're made of");
+
+            wr.n();
+            wr.print("- Guide takes an action to the enemy -");
+
+            wr.n();
+            wr.en("Okay okay don't, i will take you back please don't...");
+
+            wr.n();
+            wr.print("- The stairs appear -");
+
+            wr.n();
+            wr.en("I broke the illusion, this way takes you outside of the chamber");
+
+            wr.n();
+            wr.g("Chamber spell, illusions... This guy is really something");
+            wr.g("Oh right. Let's go, we had wasted our time enough.");
+
+            wr.n();
+            wr.print("- You take the stairs -");
+
+            wr.n();
+            wr.c("So?");
+
+            wr.n();
+            wr.g("You motherfucker");
+            wr.g("You knew that...");
+
+            wr.n();
+            wr.c("That is exactly why i pay that money");
+            wr.c("You guys get the job done i assume");
+
+            wr.n();
+            Console.WriteLine("1 - As clean as possible");
+            Console.WriteLine("2 - I mean come on at least say that we had to stand against a 'Vinil'");
+
+            while (true)
+            {
+                q1 = wr.read();
+                if ()
+            }
         }
 
         void tale22()

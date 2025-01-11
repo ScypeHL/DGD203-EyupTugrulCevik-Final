@@ -53,6 +53,13 @@ namespace Pro
             Thread.Sleep(BaseTextSpeed + textLenght * Spl);
         }
 
+        public void c(string text)
+        {
+            Console.WriteLine("[Client] " + text);
+            textLenght = text.Length;
+            Thread.Sleep(BaseTextSpeed + textLenght * Spl);
+        }
+
         public string read()
         {
             string q1 = "";

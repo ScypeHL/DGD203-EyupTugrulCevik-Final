@@ -11,11 +11,11 @@ namespace Pro
     {
         public Goblin()
         {
-            EnemyAp = 6;
+            EnemyAp = 8;
             EnemySp = 0;
             EnemyDp = 3;
-            EnemyASpeed = 1.4f;
-            EnemyHp = 400;
+            EnemyASpeed = 1.6f;
+            EnemyHp = 80;
 
         }
     }

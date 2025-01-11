@@ -20,7 +20,7 @@ namespace Pro
         public static int EnemyDp;          // defence point
         public static float EnemyASpeed;     // attack speed
         public static float EnemyHp;       // health point
-        public static string[] EnemyAbilities = { "basic attack", "heavy attack" };
+        public static string enemyType;
 
         public static float Xp = 0;          // experience point
         public static string ClassName;      // class name

@@ -10,7 +10,7 @@ namespace Pro
     {
         public Mutant()
         {
-            EnemyAp = 15;
+            EnemyAp = 18;
             EnemySp = 6;
             EnemyDp = 12;
             EnemyASpeed = 0.7f;

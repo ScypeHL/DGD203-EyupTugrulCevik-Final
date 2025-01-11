@@ -68,8 +68,9 @@ namespace Pro
             Console.WriteLine($"You dealt '{damage}' damage - Enemy has {EnemyHp}Hp");
             if (ccDelay > 0) { enemyQueue = enemyQueue + ccDelay; }
         }
-        public void start(string enemyType)
+        public void start(string enemytype)
         {
+            enemyType = enemytype;
             switch (enemyType)
             {
                 case "Vinil":
@@ -103,6 +104,10 @@ namespace Pro
         void queueMeter()
         {
             bool repeat = true;
+
+            if (Hp <= 0) { repeat = false; lost(); }
+            else if (EnemyHp <= 0) { repeat = false; win(); }
+            
             while (repeat)
             {
                 playerQueue = playerQueue - 1;
@@ -202,5 +207,42 @@ namespace Pro
             enemies.Attack();
             queueMeter();
         }
+
+        void win()
+        {
+            string q1 = "";
+            wr.n();
+            Console.WriteLine("- You won -");
+            Console.WriteLine("Press enter to countinue");
+
+            while (true)
+            {
+                q1 = Console.ReadLine();
+                if (q1 == "") { break; }
+                else
+                {
+                    Console.WriteLine("Invalid command");
+                }
+            }
+        }
+
+        void lost()
+        {
+            string q1 = "";
+            wr.n();
+            Console.WriteLine("- You lost -");
+            Console.WriteLine("Press enter to play the fight again");
+
+            while (true)
+            {
+                q1 = Console.ReadLine();
+                if (q1 == "") { start(enemyType); break; }
+                else
+                {
+                    Console.WriteLine("Invalid command");
+                }
+            }
+        }
     }
+
 }
