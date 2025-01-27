@@ -13,6 +13,7 @@ namespace Pro
         public static int Dp = 10;          // defence point
         public static float ASpeed = 1;     // attack speed
         public static float Hp = 100;       // health point
+        public static float currentHp = Hp;
         public static List<string> Abilities = new List<string>();
 
         public static int EnemyAp;          // attack point
@@ -23,7 +24,8 @@ namespace Pro
         public static string enemyType;
 
         public static float Xp = 0;          // experience point
-        public static string ClassName;      // class name
+        public static int Money = 0;         // money
+        public static string ClassName;
         public static string Name = "";      // name, its not a point
 
         public static int BaseTextSpeed = 400;          // preset 400
@@ -38,6 +40,9 @@ namespace Pro
         public static Write wr = new Write();
         public static Yesno yesno = new Yesno();
         public static Combat combat = new Combat();
+        public static Shop shop = new Shop();
+        public static Map map = new Map();
+        public static Effects effects = new Effects();
 
         public static string[] lands = {"Renetria", "Vetria", "Suloqinetria", "Detenetria", "Kernil", "Xhanlir", "Vezbeflin", "Trabraquel"};
         public static int Stage = 1;

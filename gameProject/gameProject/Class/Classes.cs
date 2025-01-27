@@ -36,7 +36,7 @@ namespace Pro
         #endregion
 
         List<float> overallCompare = new List<float>();
-        Combat combat = new Combat();
+        AbilityList ab;
         public Classes() 
         {
         }

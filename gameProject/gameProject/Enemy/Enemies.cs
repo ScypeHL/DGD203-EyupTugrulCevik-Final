@@ -10,17 +10,17 @@ namespace Pro
     {
         public Enemies()
         {
-
         }
 
         public void Attack()
         {
+
             int randomizer = rng.Next(1, 101);
             if (randomizer >= 30)
             {
-                Hp = Hp - (EnemyAp * 1.1f + EnemySp * 1.2f);
+                currentHp = currentHp - (EnemyAp * 1.1f + EnemySp * 1.2f);
                 combat.enemyQueue = combat.enemyQueue + 120;
-                wr.print($"Enemy deals {EnemyAp * 1.1f + EnemySp * 1.2f} damage - {Hp}Hp left");
+                wr.print($"Enemy deals {EnemyAp * 1.1f + EnemySp * 1.2f} damage - {currentHp}Hp left");
             }
             else if (randomizer < 30)
             {

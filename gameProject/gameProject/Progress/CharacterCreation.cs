@@ -10,7 +10,7 @@
 
         public CharacterCreation()
         {
-
+            Spl = BaseTextSpeed / 10;
         }
 
         // text boxes are in the -start and -createClass
@@ -43,8 +43,8 @@
             wr.print("You will be using it after all");
             wr.print("So do you want to [create new] or [use preset]"); 
             create();
-            save.save();
             classes.start();
+            map.input();
         }
         #endregion
 

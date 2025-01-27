@@ -10,7 +10,7 @@ namespace Pro
     {
         public Kernil()
         {
-            Console.WriteLine("say2");
+
         }
     }
 }

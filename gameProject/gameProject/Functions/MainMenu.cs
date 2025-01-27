@@ -39,6 +39,8 @@ namespace Pro
                     textSpeedSettings();
                     break;
                 case "debug":
+                    BaseTextSpeed = 0;
+                    Spl = BaseTextSpeed / 10;
                     Debug();
                     break;
                 case "0":
@@ -166,7 +168,18 @@ namespace Pro
                 q1 = Console.ReadLine().ToLower();
                 if (q1 == "combat")
                 {
-                    combat.start("Goblin");
+                    repeat = false;
+                    combat.start("Test1");
+                }
+                if (q1 == "shop")
+                {
+                    repeat = false;
+                    shop.print();
+                }
+                if (q1 == "map")
+                {
+                    repeat = false;
+                    map.input();
                 }
             }
         }

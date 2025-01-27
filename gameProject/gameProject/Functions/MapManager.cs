@@ -5,6 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Retired
+// Retired
+// Retired
+
 namespace Pro
 {
     internal class MapManager: Game
@@ -96,30 +100,6 @@ namespace Pro
             Console.WriteLine(selectedMap);
             switch (selectedMap)
             {
-                case "vetria":
-                    Map map1 = new Map(new Vetria());
-                    break;
-                case "detenetria":
-                    Map map2 = new Map(new Detenetria());
-                    break;
-                case "soluqinetria":
-                    Map map3 = new Map(new Suloqinetria());
-                    break;
-                case "renetria":
-                    Map map4 = new Map(new Renetria());
-                    break;
-                case "xhanlir":
-                    Map map5 = new Map(new Xhanlir());
-                    break;
-                case "kernil":
-                    Map map6 = new Map(new Kernil());
-                    break;
-                case "vezbeflin":
-                    Map map7 = new Map(new Vezbeflin());
-                    break;
-                case "trabraquel":
-                    Map map8 = new Map(new Trabraquel());
-                    break;
             }
         }
     }

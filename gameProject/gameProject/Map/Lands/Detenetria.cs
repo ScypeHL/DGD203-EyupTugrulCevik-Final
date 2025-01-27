@@ -11,10 +11,14 @@ namespace Pro
     {
         public Detenetria()
         {
+            start();
+        }
+
+        public void start()
+        {
             tale1();
             tale2();
         }
-
         public void tale1()
         {
             string q1;
@@ -347,11 +351,12 @@ namespace Pro
             wr.c("So?");
 
             wr.n();
+            wr.g("So?!?!");
             wr.g("You motherfucker");
             wr.g("You knew that...");
 
             wr.n();
-            wr.c("That is exactly why i pay that money");
+            wr.c("That is why i pay that money");
             wr.c("You guys get the job done i assume");
 
             wr.n();
@@ -361,8 +366,58 @@ namespace Pro
             while (true)
             {
                 q1 = wr.read();
-                if ()
+                if (q1 == "1") { tale412(); break; }
+                else if (q1 == "2") { tale411(); break; }
+                else { Console.WriteLine("bug in Detenetria at line 370"); }
             }
+        }
+
+        void tale411()
+        {
+            wr.n();
+            wr.c("Would you like to take that job if i told it");
+
+            wr.n();
+            wr.g("P- probably yeah");
+
+            wr.n();
+            wr.c("Oh really, would you do that");
+
+            wr.n();
+            wr.g("We are here for the money, that is the only thing we care");
+
+            wr.n();
+            wr.c("Well then here is you reward");
+            tale5();
+        }
+
+        void tale412()
+        {      
+            wr.n();
+            wr.g("I mean yeah, we handled it.");
+
+            wr.n();
+            wr.c("Well then. You did your part");
+            wr.c("Now its my turn");
+            tale5();
+        }
+
+        void tale5()
+        {
+            int addmoney = 6000;
+            wr.n();
+            Money = Money + addmoney;
+            Console.WriteLine($" - You have earned {addmoney} money - ");
+
+            wr.n();
+            wr.c("I hope we get along well");
+            wr.c("I would like to work with you in future");
+
+            wr.n();
+            wr.g("Thanks for everything");
+            wr.g("Take care!");
+            wr.print("...");
+            ender();
         }
 
         void tale22()
@@ -373,8 +428,23 @@ namespace Pro
             wr.print("...");
             wr.print("But, you know");
             wr.print("since we are here now");
-            wr.print("Do you want to go to the city");
-            wr.print("In case you want to buy something?");
+            wr.print("Lets just go buy sıme stuff");
+
+            wr.n();
+            wr.print("...");
+            wr.print("...");
+            wr.print("...");
+
+            wr.n();
+            wr.print("Here we are, lets take a look");
+            shop.print();
+            ender();
+            
+        }
+
+        void ender()
+        {
+            map.input();
         }
     }
 }

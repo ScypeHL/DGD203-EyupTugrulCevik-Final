@@ -12,6 +12,8 @@ namespace Pro
         string execute;
         float playerQueue;
         public float enemyQueue;
+        float holdHP;
+        float holdEnemyHP;
 
         bool hasVinil = false;
         bool hasGoblin = false;
@@ -70,6 +72,9 @@ namespace Pro
         }
         public void start(string enemytype)
         {
+            holdHP = currentHp;
+            holdEnemyHP = EnemyHp;
+            
             enemyType = enemytype;
             switch (enemyType)
             {
@@ -82,11 +87,14 @@ namespace Pro
                 case "Goblin":
                     Enemy goblin = new Enemy(new Goblin());
                     break;
+                case "Test1":
+                    Enemy test1 = new Enemy(new Test1());
+                    break;
             }
 
-            compareSpeed();
             playerQueue = playerQueue + (2 - ASpeed * 100);
             enemyQueue = enemyQueue + (2 - EnemyASpeed * 100);
+            compareSpeed();
         }
 
         void compareSpeed()
@@ -217,7 +225,7 @@ namespace Pro
 
             while (true)
             {
-                q1 = Console.ReadLine();
+                q1 = wr.read();
                 if (q1 == "") { break; }
                 else
                 {
@@ -235,8 +243,8 @@ namespace Pro
 
             while (true)
             {
-                q1 = Console.ReadLine();
-                if (q1 == "") { start(enemyType); break; }
+                q1 = wr.read();
+                if (q1 == "") {currentHp = holdHP; EnemyHp = holdEnemyHP; start(enemyType); break; }
                 else
                 {
                     Console.WriteLine("Invalid command");

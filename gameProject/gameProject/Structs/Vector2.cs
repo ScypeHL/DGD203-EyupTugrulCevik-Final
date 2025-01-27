@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Pro
 {
-    internal class Xhanlir : Places
+    public struct Vector2
     {
-        public Xhanlir()
-        {
-            Console.WriteLine("say8");
-        }
+        public int x;
+        public int y;
     }
 }
