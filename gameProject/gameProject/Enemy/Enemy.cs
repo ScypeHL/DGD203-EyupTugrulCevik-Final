@@ -12,7 +12,6 @@ namespace Pro
         public Enemy(Enemies Enemies)
         {
             enemies = Enemies;
-            enemies.Attack();
         }
     }
 }

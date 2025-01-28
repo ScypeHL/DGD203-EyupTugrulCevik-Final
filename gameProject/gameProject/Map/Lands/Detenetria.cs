@@ -109,7 +109,6 @@ namespace Pro
                 }
                 else { wr.print(notAnswer[rng.Next(0, 5)]); }
 
-
             }
 
         }
@@ -218,7 +217,7 @@ namespace Pro
 
             yesno.start();
             if (yesnoOut) { tale3(); }
-            else if (!yesnoOut) { }
+            else if (!yesnoOut) { tale31(); }
             else { Console.WriteLine("bug in Detenetria at line 219"); }
         }
         
@@ -269,6 +268,34 @@ namespace Pro
                 else { }
             }
 
+        }
+
+        void tale31()
+        {
+            wr.n();
+            wr.s("I really dont wanna waste my time with you two");
+            wr.s("You can go now");
+
+            wr.n();
+            wr.g("...");
+            wr.g("Have a nice day");
+
+            wr.n();
+            wr.print("...");
+            wr.g("What is wrong with you");
+            wr.g("Why did you just behave");
+            wr.g("Now we lost the job, thanks");
+            wr.g("Im gonna grab something to eat");
+
+            wr.n();
+            wr.g("go get me after you done");
+            wr.g("I will be at the city center");
+            shop.print();
+
+            wr.n();
+            wr.print("done?");
+            wr.print("lets go then");
+            ender();
         }
 
         void tale4()
@@ -404,10 +431,8 @@ namespace Pro
 
         void tale5()
         {
-            int addmoney = 6000;
-            wr.n();
-            Money = Money + addmoney;
-            Console.WriteLine($" - You have earned {addmoney} money - ");
+            Money = Money + 20000;
+            wr.print($"- You get 20000 Money. Now you have {Money} Money -");
 
             wr.n();
             wr.c("I hope we get along well");
@@ -444,6 +469,7 @@ namespace Pro
 
         void ender()
         {
+            inventory.add("madelion");
             map.input();
         }
     }

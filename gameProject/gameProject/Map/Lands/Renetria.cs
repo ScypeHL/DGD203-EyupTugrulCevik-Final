@@ -302,6 +302,11 @@ namespace Pro
             wr.n();
             wr.c("Here it is");
             wr.c("10000");
+
+            wr.n();
+            Money = Money + 10000;
+            wr.print($"- You get 10000 Money. Now you have {Money} Money -");
+
             wr.c("and-");
 
             wr.n();
@@ -323,6 +328,7 @@ namespace Pro
             wr.g("Anywhere, anytime");
             wr.g("Have a nice day");
 
+            inventory.add("madelion");
             map.input();
         }
     }

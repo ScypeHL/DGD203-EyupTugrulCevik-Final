@@ -12,7 +12,7 @@ namespace Pro
         public Dictionary<int, Ability> _abilities;
         public AbilityList()
         {
-
+            _abilities = new Dictionary<int, Ability>();
         }
 
         public void register(string className)

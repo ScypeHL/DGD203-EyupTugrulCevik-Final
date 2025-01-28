@@ -60,6 +60,13 @@ namespace Pro
             Thread.Sleep(BaseTextSpeed + textLenght * Spl);
         }
 
+        public void k(string text)
+        {
+            Console.WriteLine("[Kaneae] " + text);
+            textLenght = text.Length;
+            Thread.Sleep(BaseTextSpeed + textLenght * Spl);
+        }
+
         public string read()
         {
             string q1 = "";

@@ -36,7 +36,7 @@ namespace Pro
         #endregion
 
         List<float> overallCompare = new List<float>();
-        AbilityList ab;
+        private AbilityList ab = new AbilityList();
         public Classes() 
         {
         }
@@ -86,10 +86,10 @@ namespace Pro
 
             min = overallCompare.Min();
 
-            if (min == overall1) { Console.WriteLine("Your character is a member of Hunters clan"); combat.register("Hunter"); }
-            else if (min == overall2) { Console.WriteLine("Your character is a member of Sorcerers clan"); combat.register("Sorcerer"); }
-            else if (min == overall3) { Console.WriteLine("Your character is a member of Archers clan"); combat.register("Archer"); }
-            else if (min == overall4) { Console.WriteLine("Your character is a member of Warriors clan"); combat.register("Warrior"); }
+            if (min == overall1) { Console.WriteLine("Your character is a member of Hunters clan"); ab.register("Hunter"); }
+            else if (min == overall2) { Console.WriteLine("Your character is a member of Sorcerers clan"); ab.register("Sorcerer"); }
+            else if (min == overall3) { Console.WriteLine("Your character is a member of Archers clan"); ab.register("Archer"); }
+            else if (min == overall4) { Console.WriteLine("Your character is a member of Warriors clan"); ab.register("Warrior"); }
             else { Console.WriteLine("bug"); }
         }
 

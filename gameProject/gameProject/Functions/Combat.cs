@@ -37,29 +37,6 @@ namespace Pro
 
         }
 
-        public void register(string className)
-        {
-            switch (className)
-            {
-                case "Hunter":
-                    Abilities.Add(hunter1);
-                    Abilities.Add(hunter2);
-                    break;
-                case "Sorcerer":
-                    Abilities.Add(sorcerer1);
-                    Abilities.Add(sorcerer2);
-                    break;
-                case "Archer":
-                    Abilities.Add(archer1);
-                    Abilities.Add(archer2);
-                    break;
-                case "Warrior":
-                    Abilities.Add(warrior1);
-                    Abilities.Add(warrior2);
-                    break;
-            }
-        }
-
         void executeMove(float apScale, float spScale, float cooldown, int ccDelay)
         {
             float damage = apScale * Ap + spScale * Sp * 1.6f;
@@ -90,8 +67,14 @@ namespace Pro
                 case "Test1":
                     Enemy test1 = new Enemy(new Test1());
                     break;
+                case "Katakan":
+                    Enemy katakan = new Enemy(new Katakan());
+                    break;
+
             }
 
+            playerQueue = 0;
+            enemyQueue = 0;
             playerQueue = playerQueue + (2 - ASpeed * 100);
             enemyQueue = enemyQueue + (2 - EnemyASpeed * 100);
             compareSpeed();
@@ -99,37 +82,30 @@ namespace Pro
 
         void compareSpeed()
         {
-            if (ASpeed >= EnemyASpeed)
-            {
-                playersTurn();
-            }
-            else
-            {
-                enemysTurn();
-            }
+            playersTurn();
         }
 
-        void queueMeter()
+        void healthCheck()
         {
-            bool repeat = true;
-
-            if (Hp <= 0) { repeat = false; lost(); }
-            else if (EnemyHp <= 0) { repeat = false; win(); }
-            
-            while (repeat)
+            if (currentHp <= 0) { lost(); }
+            else if (EnemyHp <= 0) { win(); }
+            else { queueMeter(); }
+        }
+        
+        void queueMeter()
+        {  
+            while (true)
             {
                 playerQueue = playerQueue - 1;
                 enemyQueue = enemyQueue - 1;
 
                 if (Math.Clamp(0, playerQueue, 999) == 0)
                 {
-                    repeat = false;
                     playersTurn();
                     break;
                 }
                 else if (Math.Clamp(0, enemyQueue, 999) == 0)
                 {
-                    repeat = false;
                     enemysTurn();
                     break;
                 }
@@ -208,12 +184,12 @@ namespace Pro
                     executeMove(1.7f, 1.7f, 2.1f, 0);
                     break;
             }
-            queueMeter();
+            healthCheck();
         }
         void enemysTurn()
         {
             enemies.Attack();
-            queueMeter();
+            healthCheck();
         }
 
         void win()
@@ -244,7 +220,7 @@ namespace Pro
             while (true)
             {
                 q1 = wr.read();
-                if (q1 == "") {currentHp = holdHP; EnemyHp = holdEnemyHP; start(enemyType); break; }
+                if (q1 == "") { currentHp = holdHP; EnemyHp = holdEnemyHP; start(enemyType); break; }
                 else
                 {
                     Console.WriteLine("Invalid command");

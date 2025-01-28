@@ -19,13 +19,13 @@ namespace Pro
             if (randomizer >= 30)
             {
                 currentHp = currentHp - (EnemyAp * 1.1f + EnemySp * 1.2f);
-                combat.enemyQueue = combat.enemyQueue + 120;
+                combat.enemyQueue = combat.enemyQueue + 120 * (2 - EnemyASpeed);
                 wr.print($"Enemy deals {EnemyAp * 1.1f + EnemySp * 1.2f} damage - {currentHp}Hp left");
             }
             else if (randomizer < 30)
             {
-                Hp = Hp - (EnemyAp * 1.6f + EnemySp * 1.4f);
-                combat.enemyQueue = combat.enemyQueue + 200;
+                currentHp = currentHp - (EnemyAp * 1.6f + EnemySp * 1.4f);
+                combat.enemyQueue = combat.enemyQueue + 200 * (2 - EnemyASpeed);
             }
         }
 

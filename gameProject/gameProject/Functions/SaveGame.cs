@@ -31,7 +31,6 @@ namespace Pro
             saveWrite.WriteLine(Hp);
             saveWrite.WriteLine(Name);
             saveWrite.WriteLine(ClassName);
-            saveWrite.WriteLine(Xp);
             saveWrite.Close();
         }
 

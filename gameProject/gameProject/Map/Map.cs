@@ -104,8 +104,23 @@ namespace Pro
 
             if (places._lands.TryGetValue(playerPosition, out Land land))
             {
-                Console.WriteLine($"You are close to the {land.name}");
-                Console.WriteLine("You can go by typing 'enter'");
+                if (land.isAccessible)
+                {
+                    Console.WriteLine($"You are close to the {land.name}");
+                    Console.WriteLine("You can go by typing 'enter'");
+                }
+                else
+                {
+                    if (inventory.counter("madelion") == 3)
+                    {
+                        Console.WriteLine($"You have the items. Now you can go to the {land.name}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"You are close to the {land.name} but you can't go there now");
+                        Console.WriteLine($"Requirements: {land.requirements}");
+                    }
+                }
             }
         }
 
@@ -113,17 +128,41 @@ namespace Pro
         {
             if (places._lands.TryGetValue(playerPosition, out Land land))
             {
-                switch (land.name)
+                if (land.isAccessible)
                 {
-                    case "Detenetria":
-                        Detenetria detenetria = new Detenetria();
-                        break;
-                    case "Renetria":
-                        Renetria renetria = new Renetria();
-                        break;
-                    case "Vetria":
-                        Vetria vetria = new Vetria();
-                        break;
+                    switch (land.name)
+                    {
+                        case "Detenetria":
+                            Detenetria detenetria = new Detenetria();
+                            break;
+                        case "Renetria":
+                            Renetria renetria = new Renetria();
+                            break;
+                        case "Vetria":
+                            Vetria vetria = new Vetria();
+                            break;
+                        case "Pazar":
+                            shop.print();
+                            break;
+                    }
+                }
+                else
+                {
+                    if (inventory.counter("madelion") == 3)
+                    {
+                        switch (land.name)
+                        {
+                            case "Kernil":
+                                inventory.remove("madelion", 3);
+                                Kernil kernil = new Kernil();
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        wr.n();
+                        Console.WriteLine($"Unfortunately, we cant reach {land} now");
+                    }
                 }
             }
             else

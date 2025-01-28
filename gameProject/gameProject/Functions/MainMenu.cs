@@ -179,7 +179,21 @@ namespace Pro
                 if (q1 == "map")
                 {
                     repeat = false;
+                    inventory.add("madelion");
+                    inventory.add("madelion");
+                    inventory.add("madelion");
                     map.input();
+                }
+                if (q1 == "inv")
+                {
+                    repeat = false;
+                    Console.WriteLine("'5' should be printed");
+                    inventory.add("debug");
+                    inventory.add("debug");
+                    inventory.add("debug");
+                    inventory.add("debug");
+                    inventory.add("debug");
+                    inventory.count("debug");
                 }
             }
         }

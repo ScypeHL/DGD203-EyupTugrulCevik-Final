@@ -14,7 +14,7 @@ namespace Pro
         }
 
         public void start()
-        {
+        {            
             notAnswer.Add("Are you here, why are you not answering?");
             notAnswer.Add("Did i scare you?");
             notAnswer.Add("Can you please answer the question first?");
@@ -23,6 +23,15 @@ namespace Pro
 
             Abilities.Add("basic attack");
             Abilities.Add("heavy attack");
+        }
+
+        public void startGame()
+        {
+            MainMenu main = new MainMenu();
+            main.start();
+
+            CharacterCreation chcreate = new CharacterCreation();
+            chcreate.start();
         }
     }
 }

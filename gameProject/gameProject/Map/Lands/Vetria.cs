@@ -68,6 +68,10 @@ namespace Pro
             wr.print("We did a pretty good job");
             wr.print("We should carry this");
             wr.print("Lets go");
+
+            Money = Money + 8000;
+            wr.print($"- You get 8000 Money. Now you have {Money} Money -");
+            inventory.add("madelion");
             map.input();
         }
     }

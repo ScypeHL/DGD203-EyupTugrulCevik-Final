@@ -8,7 +8,6 @@ namespace Pro
 {
     public class Shop : Game 
     {
-        string[] itemsForSale = {"Healing Potion", "Offensive Upgrade","Defensive Upgrade", "Attack Speed Upgrade", };
         Items items = new Items();
 
         public Shop()

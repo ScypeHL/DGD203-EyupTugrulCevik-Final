@@ -12,5 +12,6 @@ namespace Pro
         public string name;
         public string description;
         public bool isAccessible;
+        public string requirements;
     }
 }

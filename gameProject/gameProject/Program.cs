@@ -10,15 +10,7 @@ namespace Pro
         {
             Adjuster adjuster = new Adjuster();
             adjuster.start();
-            
-            MainMenu main = new MainMenu();
-            main.start();
-            
-            CharacterCreation chcreate = new CharacterCreation();
-            chcreate.start();
-
-            MapManager mapGatherer = new MapManager();
-            mapGatherer.getRandomLand();
+            adjuster.startGame();
         }
 
     }

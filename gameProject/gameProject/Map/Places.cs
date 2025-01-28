@@ -15,6 +15,8 @@ namespace Pro
             Detenetria();
             Vetria();
             Renetria();
+            Kernil();
+            Pazar();
         }
 
         public void start(string landName)
@@ -22,6 +24,8 @@ namespace Pro
             Detenetria();
             Vetria();
             Renetria();
+            Kernil();
+            Pazar();
         }
 
         private void Detenetria()
@@ -55,6 +59,29 @@ namespace Pro
             renetria.isAccessible = true;
             renetria.description = "";
             _lands[coordinates] = renetria;
+        }
+
+        private void Kernil()
+        {
+            Vector2 coordinates = new Vector2 { x = 5, y = 5 };
+
+            Land kernil = new Land();
+            kernil.name = "Kernil";
+            kernil.isAccessible = false;
+            kernil.description = "The famous cave of Katakan is here";
+            kernil.requirements = "3x Madelions";
+            _lands[coordinates] = kernil;
+        }
+
+        private void Pazar()
+        {
+            Vector2 coordinates = new Vector2 { x = 3, y = 1 };
+
+            Land pazar = new Land();
+            pazar.name = "Pazar";
+            pazar.isAccessible = true;
+            pazar.description = "This is a place that you can purchase stuff to upgrade youself";
+            _lands[coordinates] = pazar;
         }
 
     }
