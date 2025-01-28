@@ -689,7 +689,7 @@
                 if (q1 == "1") { repeat = false; tale81(); }
                 else if (q1 == "2") { repeat = false; tale82(); }
                 else if (q1 == "3") { repeat = false; tale83(); }
-                else if (q1 == "4") { repeat = false; wr.n(); wr.print("Well well, lets see"); }
+                else if (q1 == "4") { repeat = false; wr.n(); wr.print("Well well, lets see"); classes.compare(); }
                 else { wr.print("Sorry, can you please come again?"); }
             }
 
