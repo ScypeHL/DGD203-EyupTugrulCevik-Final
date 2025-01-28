@@ -10,7 +10,12 @@ namespace Pro
         {
             Adjuster adjuster = new Adjuster();
             adjuster.start();
-            adjuster.startGame();
+
+            MainMenu main = new MainMenu();
+            main.start();
+
+            CharacterCreation chcreate = new CharacterCreation();
+            chcreate.start();
         }
 
     }

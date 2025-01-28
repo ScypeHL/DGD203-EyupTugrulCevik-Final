@@ -24,14 +24,5 @@ namespace Pro
             Abilities.Add("basic attack");
             Abilities.Add("heavy attack");
         }
-
-        public void startGame()
-        {
-            MainMenu main = new MainMenu();
-            main.start();
-
-            CharacterCreation chcreate = new CharacterCreation();
-            chcreate.start();
-        }
     }
 }

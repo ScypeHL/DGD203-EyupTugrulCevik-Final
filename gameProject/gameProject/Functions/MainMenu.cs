@@ -34,6 +34,7 @@ namespace Pro
                 case "play":
                     checkandclear();
                     gameStarted = true;
+                    Spl = BaseTextSpeed / 10;
                     break;
                 case "settings":
                     textSpeedSettings();
@@ -73,16 +74,19 @@ namespace Pro
                 {
                     case "start":
                         testTextSpeed();
+                        repeat = false;
                         break;
                     case "exit":
                         checkandclear();
                         start();
+                        repeat = false;
                         break;
                     case "reset":
                         BaseTextSpeed = 400;
                         checkandclear();
                         Console.WriteLine("The text speed is reset");
                         start();
+                        repeat = false;
                         break;
                     default:
                         Console.WriteLine("The command you entered is invalid");
@@ -93,7 +97,7 @@ namespace Pro
             void testTextSpeed()
             {
                 checkandclear();
-                wr.print($"This is a sequence {BaseTextSpeed} - {Spl}");
+                wr.print("This is a sequence");
                 wr.print("to show you the preset text speed");
                 wr.print("If you willing to adjust it");
                 wr.print("you can type it down below");
@@ -132,7 +136,7 @@ namespace Pro
                                 while (repeat2)
                                 {
                                     q3 = Console.ReadLine().ToLower();
-                                    if (q3 == "repeat") { testTextSpeed(); }
+                                    if (q3 == "repeat") { testTextSpeed(); repeat2 = false; }
                                     else if (q3 == "exit") 
                                     {
                                         repeat2 = false;
