@@ -17,6 +17,11 @@
         #region start
         public void start()
         {
+            Stage = 1;
+            wr.print("You can type 'command' to reach command section");
+            wr.print("-----------------------------------------------");
+
+            wr.n();
             wr.print("Welcome to our fantastic world");
             wr.print("with all the things waiting to be discovered.");
             wr.print("You will be greeted by everything");
@@ -163,18 +168,22 @@
             else if (q1 == "hunter" ^ q1 == "Hunter")
             {
                 Character hunter = new Character(new Hunter(), new Dagger());
+                ab.register("Hunter");
             }
             else if (q1 == "sorcerer" ^ q1 == "Sorcerer")
             {
                 Character sorcerer = new Character(new Sorcerer(), new MagicWand());
+                ab.register("Sorcerer");
             }
             else if (q1 == "warrior" ^ q1 == "Warrior")
             {
                 Character warrior = new Character(new Warrior(), new Sword());
+                ab.register("Warrior");
             }
             else if (q1 == "archer" ^ q1 == "Archer")
             {
                 Character archer = new Character(new Archer(), new Bow());
+                ab.register("Archer");
             }
             else if (q1 == "dummy" ^ q1 == "Dummy")
             {

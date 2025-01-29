@@ -19,10 +19,13 @@ namespace Pro
         {
             wr.n();
             wr.n();
-            Console.WriteLine("--------------------------------");
-            Console.WriteLine("Congratulations");
-            Console.WriteLine("You beat the game");
-            Console.WriteLine("You take the 1. of 1 ending");
+            Console.WriteLine("---------------Fin---------------");
+            Console.WriteLine("         Congratulations"         );
+            Console.WriteLine("        You beat the game"        );
+            Console.WriteLine("     You take the 1. of 1 ending" );
+
+            Console.WriteLine("-------------Credits-------------");
+            Console.WriteLine(" Eyup Tugrul Cevik - 2305041011"  );
         }
     }
 }

@@ -10,11 +10,11 @@ namespace Pro
     {
         public Renetria()
         {
-            start();
         }
 
-        void start()
+        public void start()
         {
+            Stage = 5;
             tale1();
             tale2();
             tale3();
@@ -262,8 +262,9 @@ namespace Pro
             combat.start("Mutant");
         }
 
-        void tale6()
+        public void tale6()
         {
+            Stage = 51;
             wr.n();
             wr.print("Woah, that was freaking good");
             wr.print("And the most important");

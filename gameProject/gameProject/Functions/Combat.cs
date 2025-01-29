@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
@@ -120,71 +121,28 @@ namespace Pro
             
             wr.n();
             Console.WriteLine("Your turn");
+            printMove();
 
-            wr.n();
-            for (int i = 0; i < Abilities.Count; i++)
-            {
-                Console.WriteLine($"{i + 1} - " + Abilities[i]);
-            }
+            q1 = wr.read();
+            if (Int32.TryParse(q1, out q2) && q2 >= 1 && q2 <= 4) { Converter(q2); }
+            else { Console.WriteLine("This is not an existing ability"); }
 
-            while (repeat)
-            {
-                q1 = wr.read();
-                if (Int32.TryParse(q1, out q2))
-                {
-                    if (q2 - 1 >= 0 || q2 <= Abilities.Count) { repeat = false; execute = Abilities[q2 - 1]; Converter(execute); }
-                }
-                else
-                {
-                    Console.WriteLine("Please use an existing ability");
-                }
-            }
         }
 
-        void Converter(string queue)
+        void Converter(int queue)
         {
-            switch (queue)
+            if (ab._abilities.TryGetValue(queue, out Ability ability))
             {
-                case "basic attack":
-                    executeMove(1, 0, 1, 0);
-                    break;
-                case "heavy attack":
-                    executeMove(1.6f, 2.5f, 3f, 0);
-                    break;
-                
-                // sorceress special skills
-                case sorcerer1:
-                    executeMove(0, 2, 2.2f, 300);
-                    break;
-                case sorcerer2:
-                    executeMove(0.4f, 1.8f, 1.8f, 0);
-                    break;
-
-                // archer special skills
-                case archer1:
-                    executeMove(1.7f, 0, 2, 0);
-                    break;
-                case archer2:
-                    executeMove(1.2f, 0.4f, 1.6f, 0);
-                    break;
-
-                // warrior special skills
-                case warrior1:
-                    executeMove(1.2f, 0, 1.2f , 0);
-                    break;
-                case warrior2:
-                    executeMove(3, 0.9f, 3.5f, 0);
-                    break;
-
-                // hunter special skills
-                case hunter1:
-                    executeMove(1.2f, 1.5f, 1.3f, 0);
-                    break;
-                case hunter2:
-                    executeMove(1.7f, 1.7f, 2.1f, 0);
-                    break;
+                Console.WriteLine($"You have executed {ability.name}");
+                executeMove(ability.apScale, ability.spScale, ability.cooldown, ability.ccDealy);
+                healthCheck();
             }
-            healthCheck();
+            else
+            {
+                Console.WriteLine("This is not an existing ability");
+                playersTurn();
+            }
+            
         }
         void enemysTurn()
         {
@@ -192,6 +150,15 @@ namespace Pro
             healthCheck();
         }
 
+        void printMove()
+        {
+            for (int i = 1; i <= 4; i++)
+            {
+                Console.WriteLine($"{i} - {ab._abilities[i].name} > || Damage:{ab._abilities[i].apScale * Ap + ab._abilities[i].spScale * Sp * 1.6f}|| Cooldown:{((2 - ASpeed) * 100) * ab._abilities[i].cooldown}|| CC:{ab._abilities[i].ccDealy}tick||");
+            }
+                
+        }
+        
         void win()
         {
             string q1 = "";

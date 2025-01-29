@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pro
 {
-    internal class AbilityList
+    public class AbilityList
     {
         public Dictionary<int, Ability> _abilities;
         public AbilityList()
@@ -17,6 +17,7 @@ namespace Pro
 
         public void register(string className)
         {
+            Console.WriteLine("ability");
             basicAttack();
             heavyAttack();
 

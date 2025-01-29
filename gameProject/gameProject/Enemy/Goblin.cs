@@ -14,7 +14,7 @@ namespace Pro
             EnemyAp = 8;
             EnemySp = 0;
             EnemyDp = 3;
-            EnemyASpeed = 1.6f;
+            EnemyASpeed = 1.4f;
             EnemyHp = 80;
 
         }

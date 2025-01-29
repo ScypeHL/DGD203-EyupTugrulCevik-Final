@@ -23,7 +23,7 @@ namespace Pro
         public static float EnemyHp;       // health point
         public static string enemyType;
 
-        public static int Money = 0;         // money
+        public static int Money = 1000;         // money
         public static string ClassName;
         public static string Name = "";      // name, its not a point
 
@@ -43,9 +43,10 @@ namespace Pro
         public static Map map = new Map();
         public static Effects effects = new Effects();
         public static Inventory inventory = new Inventory();
+        public static AbilityList ab = new AbilityList();
 
         public static string[] lands = {"Renetria", "Vetria", "Suloqinetria", "Detenetria", "Kernil", "Xhanlir", "Vezbeflin", "Trabraquel"};
-        public static int Stage = 1;
+        public static int Stage = 0;
         public static bool gameStarted = false;
         public static int saveID;
 

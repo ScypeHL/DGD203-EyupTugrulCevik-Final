@@ -11,11 +11,11 @@ namespace Pro
     {
         public Detenetria()
         {
-            start();
         }
 
         public void start()
         {
+            Stage = 3;
             tale1();
             tale2();
         }
@@ -221,8 +221,9 @@ namespace Pro
             else { Console.WriteLine("bug in Detenetria at line 219"); }
         }
         
-        void tale3()
+        public void tale3()
         {
+            Stage = 31;
             bool repeat = true;
             string q1;
             
@@ -343,8 +344,9 @@ namespace Pro
             tale41();
 
         }
-        void tale41()
+        public void tale41()
         {
+            Stage = 32;
             string q1 = "";
             
             wr.n();

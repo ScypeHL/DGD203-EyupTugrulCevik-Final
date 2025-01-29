@@ -26,6 +26,18 @@ namespace Pro
             }
         }
 
+        public bool check(string item)
+        {
+            if (Inv.Contains(item))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void count(string item) // mostly used for debugging
         {
             int output = 0;

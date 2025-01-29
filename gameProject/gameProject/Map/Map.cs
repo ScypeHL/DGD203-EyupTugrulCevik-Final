@@ -28,7 +28,17 @@ namespace Pro
 
         public void input()
         {
+            Stage = 2;
             string q1;
+            wr.n();
+            if (inventory.check("Map"))
+            {
+                Console.WriteLine("1 - 1 > Detenetria");
+                Console.WriteLine("2 - 3 > Vetria");
+                Console.WriteLine("4 - 2 > Renetria");
+                Console.WriteLine("5 - 5 > Kernil");
+                Console.WriteLine("3 - 1 > Pazar");
+            }
             wr.n();
             Console.WriteLine("Where would you like to do");
             Console.WriteLine("You can go 'up, down, right, left'");
@@ -67,6 +77,7 @@ namespace Pro
         {
             if (playerPosition.x + x < 0 || playerPosition.x + x > defaultWidth || playerPosition.y + y < 0 || playerPosition.y + y > defaultHeight)
             {
+                Console.Clear();
                 wr.n();
                 Console.WriteLine("There is nowhere to go");
                 Console.Write(playerPosition.x);
@@ -75,6 +86,7 @@ namespace Pro
             }
             else
             {
+                Console.Clear();
                 playerPosition.x = playerPosition.x + x;
                 playerPosition.y = playerPosition.y + y;
 
@@ -134,12 +146,15 @@ namespace Pro
                     {
                         case "Detenetria":
                             Detenetria detenetria = new Detenetria();
+                            detenetria.start();
                             break;
                         case "Renetria":
                             Renetria renetria = new Renetria();
+                            renetria.start();
                             break;
                         case "Vetria":
                             Vetria vetria = new Vetria();
+                            vetria.start();
                             break;
                         case "Pazar":
                             shop.print();
@@ -155,6 +170,7 @@ namespace Pro
                             case "Kernil":
                                 inventory.remove("madelion", 3);
                                 Kernil kernil = new Kernil();
+                                kernil.start();
                                 break;
                         }
                     }

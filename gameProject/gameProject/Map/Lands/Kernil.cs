@@ -11,11 +11,11 @@ namespace Pro
         Ending ending = new Ending();
         public Kernil()
         {
-
         }
 
-        void start()
+        public void start()
         {
+            Stage = 6;
             tale1();
             tale2();
         }
@@ -94,6 +94,7 @@ namespace Pro
             wr.k("Well done, two of you");
             wr.k("Coungratz, You found me");
             wr.k("Now please do your thing");
+            tale3();
         }
 
         void tale3()

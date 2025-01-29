@@ -10,11 +10,11 @@ namespace Pro
     {
         public Vetria()
         {
-            start();
         }
 
-        void start()
+        public void start()
         {
+            Stage = 4;
             tale1();
             tale2();
         }
@@ -61,8 +61,9 @@ namespace Pro
             combat.start("Goblin");
         }
 
-        void tale2()
+        public void tale2()
         {
+            Stage = 41;
             wr.n();
             wr.print("Woah, that was not bad");
             wr.print("We did a pretty good job");

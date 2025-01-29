@@ -8,7 +8,7 @@ namespace Pro
 {
     public class Shop : Game 
     {
-        Items items = new Items();
+        private Items items = new Items();
 
         public Shop()
         {
@@ -42,6 +42,7 @@ namespace Pro
                     if (aytım.price <= Money)
                     {
                         Console.WriteLine($"You have purchased {aytım.name} successfuly");
+                        if (aytım.name == "Map") { inventory.add("Map"); }
                         Hp = Hp + aytım.hpIncrease;
                         effects.healing(aytım.hpRegen);
                         Ap = Ap + aytım.apIncrease;

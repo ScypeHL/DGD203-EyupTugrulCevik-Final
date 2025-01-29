@@ -81,18 +81,28 @@ namespace Pro
                 {
                     wr.n();
                     Console.WriteLine("Available commands:");
+                    Console.WriteLine("Stats");
                     Console.WriteLine("Settings");
                     Console.WriteLine("Save");
+                    Console.WriteLine("Load");
                     Console.WriteLine("Typing anything else will stop the 'command' section");
                     q2 = Console.ReadLine().ToLower();
                     switch (q2)
                     {
+                        case "stats":
+                            printStats();
+                            read();
+                            break;
                         case "settings":
                             menu.textSpeedSettings();
                             read();
                             break;
                         case "save":
                             save.save();
+                            read();
+                            break;
+                        case "load":
+                            save.load();
                             read();
                             break;
                         default:
@@ -108,5 +118,9 @@ namespace Pro
             return q1;
         }
 
+        void printStats()
+        {
+            Console.WriteLine($"[{ClassName}] > Health:{Hp} | Attack:{Ap} | Skill:{Sp} | Defense: {Dp} | Attack Speed:{ASpeed} | Money:{Money}");
+        }
     }
 }

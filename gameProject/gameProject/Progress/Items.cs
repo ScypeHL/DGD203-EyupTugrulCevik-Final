@@ -18,6 +18,7 @@
             QuartzEnhancer();
             DiamondSharpener();
             FeatherOfHatred();
+            Map();
         }
         public void HealingPotion()
         {
@@ -83,6 +84,16 @@
             foh.price = 9400;
             foh.aspeedIncrease = 0.2f;
             _items["6"] = foh;
+            itemCount = itemCount + 1;
+        }
+
+        public void Map()
+        {
+            Item map = new Item();
+            map.name = "Map";
+            map.description = "This is a paper map that tells the spots";
+            map.price = 1000;
+            _items["7"] = map;
             itemCount = itemCount + 1;
         }
 

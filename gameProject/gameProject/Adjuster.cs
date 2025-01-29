@@ -20,9 +20,6 @@ namespace Pro
             notAnswer.Add("Can you please answer the question first?");
             notAnswer.Add("Okay take your time");
             notAnswer.Add("I have plenty of time so don't worry");
-
-            Abilities.Add("basic attack");
-            Abilities.Add("heavy attack");
         }
     }
 }

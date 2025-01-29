@@ -36,7 +36,6 @@ namespace Pro
         #endregion
 
         List<float> overallCompare = new List<float>();
-        private AbilityList ab = new AbilityList();
         public Classes() 
         {
         }

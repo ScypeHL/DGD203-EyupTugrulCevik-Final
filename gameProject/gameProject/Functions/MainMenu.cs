@@ -149,6 +149,7 @@ namespace Pro
                             }
                             else
                             {
+                                Console.WriteLine($"The text speed is set to {BaseTextSpeed} successfuly");
                                 break;
                             }
                         }
